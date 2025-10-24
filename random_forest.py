@@ -31,3 +31,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Entrenar modelo Random Forest con balanceo
 model = RandomForestClassifier(n_estimators=100, random_state=42, class_weight="balanced")
 model.fit(X_train, y_train)
+
+
+# Predicciones y evaluación
+y_pred = model.predict(X_test)
+
+print("Matriz de confusión:")
+print(confusion_matrix(y_test, y_pred))
+print("\nReporte de clasificación:")
+print(classification_report(y_test, y_pred, zero_division=0))
