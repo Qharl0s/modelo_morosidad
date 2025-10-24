@@ -85,15 +85,15 @@ plt.show()
 df_filtrado = df[df['Moroso'].isin([3, 4])]
 
 
-if 'cProducto' in label_encoders:
-    df_filtrado['cProducto'] = label_encoders['cProducto'].inverse_transform(df_filtrado['cProducto'])
+if 'Producto' in label_encoders:
+    df_filtrado['Producto'] = label_encoders['Producto'].inverse_transform(df_filtrado['Producto'])
 
 # Gráfico de dispersión
 plt.figure(figsize=(12, 6))
 sns.stripplot(
     data=df_filtrado,
-    x='cProducto',           # Variable categórica en eje X
-    y='nCapitalDesembolso',        # Variable numérica en eje Y
+    x='Producto',           # Variable categórica en eje X
+    y='Capital_Desembolsado',        # Variable numérica en eje Y
     hue='Moroso',          # Color según nivel de morosidad
     jitter=True,            # Desplaza puntos horizontalmente para que no se encimen
     dodge=True,
