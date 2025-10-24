@@ -23,3 +23,7 @@ source venv/bin/activate
 Para ejecutar el modelo basado en Random Forest, instala las siguientes librerías:
 
 pip install pandas scikit-learn matplotlib seaborn openpyxl
+
+Para ejecutar el modelo basado en Redes Neuronales, instala las siguientes librerías:
+
+pip install pandas numpy scikit-learn tensorflow openpyxl
