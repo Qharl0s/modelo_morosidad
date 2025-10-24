@@ -9,10 +9,10 @@ from sklearn.tree import plot_tree
 
 
 # Cargar archivo
-df = pd.read_excel("data_rango_v6.xlsx")
+df = pd.read_excel("data.xlsx")
 
 # Filtrar clases válidas (0 a 4)
-df = df[df["nMoroso"].isin([0, 1, 2, 3, 4])]
+df = df[df["Moroso"].isin([0, 1, 2, 3, 4])]
 
 # Codificar variables categóricas
 label_encoders = {}
@@ -22,8 +22,8 @@ for col in df.select_dtypes(include="object"):
     label_encoders[col] = le
 
 # Separar variables predictoras y objetivo
-X = df.drop("nMoroso", axis=1)
-y = df["nMoroso"]
+X = df.drop("Moroso", axis=1)
+y = df["Moroso"]
 
 # Dividir en entrenamiento y prueba
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -32,7 +32,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = RandomForestClassifier(n_estimators=100, random_state=42, class_weight="balanced")
 model.fit(X_train, y_train)
 
-
 # Predicciones y evaluación
 y_pred = model.predict(X_test)
 
@@ -40,3 +39,22 @@ print("Matriz de confusión:")
 print(confusion_matrix(y_test, y_pred))
 print("\nReporte de clasificación:")
 print(classification_report(y_test, y_pred, zero_division=0))
+
+cm = confusion_matrix(y_test, y_pred)
+plt.figure(figsize=(8, 6))
+sns.heatmap(cm, annot=True, fmt='d', cmap="Blues", xticklabels=range(5), yticklabels=range(5))
+plt.xlabel("Predicción")
+plt.ylabel("Valor real")
+plt.title("Matriz de Confusión")
+plt.show()
+
+# Importancia de variables
+importances = model.feature_importances_
+feature_names = X.columns
+feat_importances = pd.Series(importances, index=feature_names).sort_values(ascending=False)
+
+plt.figure(figsize=(10, 6))
+sns.barplot(x=feat_importances.values, y=feat_importances.index)
+plt.title("Importancia de las variables")
+plt.tight_layout()
+plt.show()
