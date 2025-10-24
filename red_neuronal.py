@@ -60,3 +60,38 @@ y_cat = to_categorical(y)
 X_train, X_test, y_train, y_test = train_test_split(
     X, y_cat, test_size=0.2, random_state=42, stratify=y_cat
 )
+
+
+# ==============================
+# 5. CREACIÓN DEL MODELO
+# ==============================
+model = Sequential([
+    Dense(64, input_dim=X_train.shape[1], activation='relu'),
+    Dropout(0.3),
+    Dense(32, activation='relu'),
+    Dropout(0.2),
+    Dense(y_cat.shape[1], activation='softmax')
+])
+
+model.compile(
+    optimizer='adam',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
+
+# ==============================
+# 6. ENTRENAMIENTO
+# ==============================
+history = model.fit(
+    X_train, y_train,
+    validation_split=0.2,
+    epochs=50,
+    batch_size=32,
+    verbose=1
+)
+
+# ==============================
+# 7. EVALUACIÓN
+# ==============================
+loss, acc = model.evaluate(X_test, y_test)
+print(f"\n🔹 Precisión en test: {acc:.4f}")
