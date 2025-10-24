@@ -95,3 +95,14 @@ history = model.fit(
 # ==============================
 loss, acc = model.evaluate(X_test, y_test)
 print(f"\n🔹 Precisión en test: {acc:.4f}")
+
+
+# Predicciones
+y_pred = np.argmax(model.predict(X_test), axis=1)
+y_true = np.argmax(y_test, axis=1)
+
+print("\n🔹 Reporte de Clasificación:")
+print(classification_report(y_true, y_pred))
+
+print("\n🔹 Matriz de Confusión:")
+print(confusion_matrix(y_true, y_pred))
