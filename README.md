@@ -10,13 +10,19 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado Python 3.8+.
 Se recomienda trabajar dentro de un entorno virtual.
 
 🔧 Crear y activar entorno virtual
+
 En Windows:
+
 python -m venv venv
+
 venv\Scripts\activate
 
 En macOS / Linux:
+
 python3 -m venv venv
+
 source venv/bin/activate
+
 
 📦 Instalación de dependencias
 
@@ -29,10 +35,13 @@ Para ejecutar el modelo basado en Redes Neuronales, instala las siguientes libre
 pip install pandas numpy scikit-learn tensorflow openpyxl
 
 Resultados:
+
 Random Forest:
+
 🔹 Matriz de confusión:
 [[3651    8]
  [  59 2828]]
+
 
 🔹 Reporte de clasificación:
               precision    recall  f1-score   support
@@ -41,10 +50,14 @@ Random Forest:
            1       1.00      0.98      0.99      2887
 
     accuracy                           0.99      6546
+   
    macro avg       0.99      0.99      0.99      6546
+   
 weighted avg       0.99      0.99      0.99      6546
 
+
 Red Neuronal:
+
 🔹 Matriz de Confusión:
 [[3534  108]
  [ 249 2655]]
@@ -56,7 +69,11 @@ Red Neuronal:
            1       0.96      0.91      0.94      2904
 
     accuracy                           0.95      6546
+    
    macro avg       0.95      0.94      0.94      6546
+   
 weighted avg       0.95      0.95      0.95      6546
+
+
 
 
