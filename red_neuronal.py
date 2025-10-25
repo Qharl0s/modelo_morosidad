@@ -58,21 +58,25 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # ======================================
-# 5. CREACIÓN DEL MODELO
+# 5. CREACIÓN DEL MODELO AJUSTADO (11 variables + 1 resultado)
 # ======================================
+
 model = Sequential([
+    # Dense(128, input_dim=11, activation='relu'),   # Capa de entrada (11 variables) + 1ª capa oculta
     Dense(64, input_dim=X_train.shape[1], activation='relu'),
-    Dropout(0.3),
-    Dense(32, activation='relu'),
-    Dropout(0.2),
-    Dense(1, activation='sigmoid')
+    Dropout(0.3),                                  # Apaga el 30% de nodos durante entrenameinto
+    Dense(64, activation='relu'),                  # 2ª capa oculta
+    Dropout(0.2),                                  # Apaga el 20% de nodos durante entrenameinto
+    Dense(32, activation='relu'),                  # 3ª capa oculta
+    Dense(1, activation='sigmoid')                 # Capa de salida binaria (moroso / no moroso)
 ])
 
 model.compile(
-    optimizer='adam',
-    loss='binary_crossentropy',
-    metrics=['accuracy']
+    optimizer='adam',                  # Optimizador adaptativo
+    loss='binary_crossentropy',        # Función de pérdida binaria
+    metrics=['accuracy']               # Métrica principal: precisión
 )
+
 
 # ======================================
 # 6. ENTRENAMIENTO
