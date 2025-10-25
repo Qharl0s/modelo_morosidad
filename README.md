@@ -39,40 +39,41 @@ Resultados:
 Random Forest:
 
 🔹 Matriz de confusión:
+
 [[3651    8]
+
  [  59 2828]]
 
 
-🔹 Reporte de clasificación:
-              precision    recall  f1-score   support
+🔹 **Reporte de Clasificación**
 
-           0       0.98      1.00      0.99      3659
-           1       1.00      0.98      0.99      2887
+| Clase | Precisión | Recall | F1-Score | Soporte |
+|:------|:----------:|:------:|:---------:|:--------:|
+| 0 | 0.98 | 1.00 | 0.99 | 3659 |
+| 1 | 1.00 | 0.98 | 0.99 | 2887 |
+| **Exactitud Global** |  |  | **0.99** | 6546 |
 
-    accuracy                           0.99      6546
-   
-   macro avg       0.99      0.99      0.99      6546
-   
-weighted avg       0.99      0.99      0.99      6546
+
 
 
 Red Neuronal:
 
 🔹 Matriz de Confusión:
+
 [[3534  108]
+
  [ 249 2655]]
 
-🔹 Reporte de Clasificación:
-              precision    recall  f1-score   support
 
-           0       0.93      0.97      0.95      3642
-           1       0.96      0.91      0.94      2904
+🔹 **Reporte de Clasificación**
 
-    accuracy                           0.95      6546
+| Clase | Precisión | Recall | F1-Score | Soporte |
+|:------|:----------:|:------:|:---------:|:--------:|
+| 0 | 0.93 | 0.97 | 0.95 | 3642 |
+| 1 | 0.96 | 0.91 | 0.94 | 2904 |
+| **Exactitud Global** |  |  | **0.95** | 6546 |
+
     
-   macro avg       0.95      0.94      0.94      6546
-   
-weighted avg       0.95      0.95      0.95      6546
 
 
 
