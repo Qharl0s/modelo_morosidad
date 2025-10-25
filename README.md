@@ -46,17 +46,17 @@ weighted avg       0.99      0.99      0.99      6546
 
 Red Neuronal:
 🔹 Matriz de Confusión:
-[[3551   91]
- [ 280 2624]]
+[[3534  108]
+ [ 249 2655]]
 
 🔹 Reporte de Clasificación:
               precision    recall  f1-score   support
 
-           0       0.93      0.98      0.95      3642
-           1       0.97      0.90      0.93      2904
+           0       0.93      0.97      0.95      3642
+           1       0.96      0.91      0.94      2904
 
-    accuracy                           0.94      6546
+    accuracy                           0.95      6546
    macro avg       0.95      0.94      0.94      6546
-weighted avg       0.94      0.94      0.94      6546
+weighted avg       0.95      0.95      0.95      6546
 
 

@@ -74,7 +74,7 @@ plt.show()
 
 # Histograma de Cuotas Atradas vs Moroso
 plt.figure(figsize=(10, 5))
-sns.histplot(data=df, x='nEdad', hue='Moroso', multiple="stack", bins=20)
+sns.histplot(data=df, x='Edad', hue='Moroso', multiple="stack", bins=20)
 plt.title("Cuotas atrasadas según nivel de morosidad")
 plt.xlabel("Cuotas atrasadas")
 plt.ylabel("Frecuencia")
@@ -82,7 +82,7 @@ plt.show()
 
 # Matriz de Dispersion
 # Filtrar solo morosos de nivel 3 y 4
-df_filtrado = df[df['Moroso'].isin([3, 4])]
+df_filtrado = df[df['Moroso'].isin([0, 1])]
 
 
 if 'Producto' in label_encoders:
@@ -100,7 +100,7 @@ sns.stripplot(
     palette='coolwarm',
     alpha=0.7
 )
-plt.title("Producto x Desembolso (Morosos Nivel 3 y 4)")
+plt.title("Producto x Desembolso (Morosos Nivel 0 y 1)")
 plt.xlabel("Producto")
 plt.ylabel("Desembolso")
 plt.legend(title="Moroso")
