@@ -1,51 +1,43 @@
-🧠 Modelo Predictor de Morosidad
+# 🧠 Modelo Predictor de Morosidad
 
-🔍 Random Forest y Redes Neuronales
+## 📚 Random Forest y Redes Neuronales
 
 Este proyecto desarrolla un modelo de predicción de morosidad utilizando técnicas de Machine Learning, principalmente Random Forest y Redes Neuronales, para analizar el comportamiento crediticio y estimar la probabilidad de incumplimiento.
 
-⚙️ Requisitos previos
+## ⚙️ Requisitos previos
 
-Antes de ejecutar el proyecto, asegúrate de tener instalado Python 3.8+.
-Se recomienda trabajar dentro de un entorno virtual.
+🐍 Python 3.8+.
 
-🔧 Crear y activar entorno virtual
+## 💻 Crear y activar entorno virtual
 
-En Windows:
+    python -m venv venv
 
-python -m venv venv
-
-venv\Scripts\activate
-
-En macOS / Linux:
-
-python3 -m venv venv
-
-source venv/bin/activate
+    venv\Scripts\activate
 
 
-📦 Instalación de dependencias
+## 📦 Instalación de dependencias
+    
+    # para Random Forest
+    pip install pandas scikit-learn matplotlib seaborn openpyxl
+    
+    # para Red Neuronal
+    pip install pandas numpy scikit-learn tensorflow openpyxl
 
-Para ejecutar el modelo basado en Random Forest, instala las siguientes librerías:
+## 📈 Ejecución y Resultados:
 
-pip install pandas scikit-learn matplotlib seaborn openpyxl
+🔹 Random Forest
 
-Para ejecutar el modelo basado en Redes Neuronales, instala las siguientes librerías:
+    # Random Forest:
+    python random_forest.py
 
-pip install pandas numpy scikit-learn tensorflow openpyxl
+   Matriz de confusión:
 
-Resultados:
+|               | Predicción Positiva | Predicción Negativa |
+|---------------|--------------------:|--------------------:|
+| Real Positivo | 3651               | 8                  |
+| Real Negativo | 59                 | 2828               |
 
-Random Forest:
-
-🔹 Matriz de confusión:
-
-[[3651    8]
-
- [  59 2828]]
-
-
-🔹 **Reporte de Clasificación**
+   Reporte de Clasificación
 
 | Clase | Precisión | Recall | F1-Score | Soporte |
 |:------|:----------:|:------:|:---------:|:--------:|
@@ -53,19 +45,20 @@ Random Forest:
 | 1 | 1.00 | 0.98 | 0.99 | 2887 |
 | **Exactitud Global** |  |  | **0.99** | 6546 |
 
+🔹 Red Neuronal:
+
+    # Red Neuronal:
+    python red_neuronal.py
+
+   Matriz de Confusión:
+
+|               | Predicción Positiva | Predicción Negativa |
+|---------------|--------------------:|--------------------:|
+| Real Positivo | 3534                | 108                 |
+| Real Negativo | 249                 | 2655                |
 
 
-
-Red Neuronal:
-
-🔹 Matriz de Confusión:
-
-[[3534  108]
-
- [ 249 2655]]
-
-
-🔹 **Reporte de Clasificación**
+   Reporte de Clasificación
 
 | Clase | Precisión | Recall | F1-Score | Soporte |
 |:------|:----------:|:------:|:---------:|:--------:|
@@ -73,7 +66,8 @@ Red Neuronal:
 | 1 | 0.96 | 0.91 | 0.94 | 2904 |
 | **Exactitud Global** |  |  | **0.95** | 6546 |
 
-    
+
+
 
 
 
